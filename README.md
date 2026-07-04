@@ -109,7 +109,7 @@ Python web service, e.g. Render, Railway, or Fly.io:
 4. Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
 5. Add the environment variables listed above in the platform's dashboard.
 
-**Live deployment:** `<add your deployed URL here>`
+**Live deployment:** https://company-research-ai.onrender.com
 
 ## API Overview
 
