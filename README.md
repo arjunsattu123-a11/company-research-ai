@@ -73,9 +73,9 @@ cp .env.example .env
 ```
 
 ```
-SERPER_API_KEY=your_serper_api_key
-OPENROUTER_API_KEY=your_openrouter_api_key
-DISCORD_BOT_TOKEN=            # optional, can also be set from the UI
+SERPER_API_KEY=48bed8e01a5a739237839504a3e915ec708e69f6
+OPENROUTER_API_KEY=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
+DISCORD_BOT_TOKEN=            # optional, can also be set from the Ui
 DISCORD_CHANNEL_ID=           # optional, can also be set from the UI
 ```
 
