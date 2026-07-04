@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Research AI Assistant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <h2>Company Research AI</h2>
+    <p class="tagline">Research any company in seconds.</p>
+
+    <label class="field-label">AI Model</label>
+    <select id="modelSelect">
+      {% for m in models %}
+      <option value="{{ m.id }}">{{ m.label }}</option>
+      {% endfor %}
+    </select>
+
+    <button id="settingsToggle" class="secondary-btn">⚙ Discord Settings</button>
+
+    <div id="settingsPanel" class="settings-panel hidden">
+      <label class="field-label">Applicant Name</label>
+      <input type="text" id="applicantName" placeholder="Your name">
+
+      <label class="field-label">Applicant Email</label>
+      <input type="email" id="applicantEmail" placeholder="you@example.com">
+
+      <label class="field-label">Discord Bot Token</label>
+      <input type="password" id="discordToken" placeholder="Bot token">
+
+      <label class="field-label">Discord Channel ID</label>
+      <input type="text" id="discordChannel" placeholder="Channel ID">
+
+      <button id="saveDiscord" class="secondary-btn">Save Configuration</button>
+      <label class="checkbox-row">
+        <input type="checkbox" id="sendToDiscord">
+        Send report to Discord after generation
+      </label>
+      <div id="discordStatus" class="status-text"></div>
+    </div>
+  </aside>
+
+  <main class="chat-area">
+    <div id="chatWindow" class="chat-window">
+      <div class="message bot">
+        Hi! Give me a company name (e.g. <em>Stripe</em>) or a website URL
+        (e.g. <em>https://stripe.com</em>) and I'll research it for you.
+      </div>
+    </div>
+
+    <form id="chatForm" class="chat-input-row">
+      <input type="text" id="queryInput" placeholder="Enter company name or website URL..." autocomplete="off" required>
+      <button type="submit" id="sendBtn">Research</button>
+    </form>
+  </main>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
